@@ -251,7 +251,7 @@ public class EmailMessage {
 
   private void connectToSMTPServer(SMTPTransport t) throws MessagingException {
     if (_usesAuth) {
-      t.connect(_mailHost, _mailUser, _mailPassword);
+      t.connect(_mailHost, Integer.parseInt(_mailPort), _mailUser, _mailPassword);
     } else {
       t.connect();
     }
