@@ -37,6 +37,8 @@ public class Emailer extends AbstractMailer implements Alerter {
 
   private static final String HTTP = "http";
 
+  public static final String DEFAULT_SMTP_PORT = "25";
+
   private boolean testMode = false;
 
   private String scheme;
@@ -55,7 +57,7 @@ public class Emailer extends AbstractMailer implements Alerter {
     super(props);
     this.azkabanName = props.getString("azkaban.name", "azkaban");
     this.mailHost = props.getString("mail.host", "localhost");
-    this.mailPort = props.getString("mail.port", "25");
+    this.mailPort = props.getString("mail.port", DEFAULT_SMTP_PORT);
     this.mailUser = props.getString("mail.user", "");
     this.mailPassword = props.getString("mail.password", "");
     this.mailSender = props.getString("mail.sender", "");
